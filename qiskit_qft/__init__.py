@@ -31,4 +31,4 @@ def qft(circuit: QuantumCircuit, n: int) -> None:
 def inverse_qft(circuit: QuantumCircuit, n: int) -> None:
   temp_circuit = QuantumCircuit(n)
   qft(temp_circuit, n)
-  circuit = circuit + temp_circuit.inverse()
+  circuit.combine(temp_circuit.inverse())
