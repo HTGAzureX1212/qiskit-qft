@@ -24,11 +24,12 @@ def swap_all(circuit: QuantumCircuit, n: int):
     circuit.swap(q, n - q - 1)
 
 
-def qft(circuit: QuantumCircuit, n: int) -> QuantumCircuit:
+def qft(n: int) -> QuantumCircuit:
+  circuit = QuantumCircuit(n)
   rotations(circuit, n)
   swap_all(circuit, n)
 
   return circuit
 
-def inverse_qft(circuit: QuantumCircuit, n: int) -> QuantumCircuit:
-  return qft(circuit, n).inverse()
+def inverse_qft(n: int) -> QuantumCircuit:
+  return qft(n).inverse()
