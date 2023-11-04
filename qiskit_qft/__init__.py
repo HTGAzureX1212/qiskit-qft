@@ -1,4 +1,4 @@
-from math import py
+from math import pi
 from qiskit import QuantumCircuit
 
 def rotations(circuit: QuantumCircuit, n: int) -> QuantumCircuit:
