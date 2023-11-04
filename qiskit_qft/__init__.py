@@ -28,7 +28,7 @@ def qft(circuit: QuantumCircuit, n: int) -> None:
   rotations(circuit, n)
   swap_all(circuit, n)
 
-def inverse_qft(circuit: QuantumCircuit, n: int) -> None:
+def create_inverse_qft(n: int) -> QuantumCircuit:
   temp_circuit = QuantumCircuit(n)
   qft(temp_circuit, n)
-  circuit.combine(temp_circuit.inverse())
+  return temp_circuit.inverse()
